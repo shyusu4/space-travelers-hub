@@ -1,5 +1,11 @@
+import Navbar from '../../bookstore/src/components/Navbar';
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;
