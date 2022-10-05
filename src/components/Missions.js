@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMissions } from '../redux/missions/missions';
 import MissionItem from './MissionItem';
+import './Missions.css';
 
 function Missions() {
   const missions = useSelector((state) => state.missionsReducer.missions);
@@ -17,6 +18,7 @@ function Missions() {
             <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

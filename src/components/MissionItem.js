@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const MissionItem = (props) => {
   const { name, description } = props;
   return (
-    <tr>
+    <tr className='mission-item'>
       <td className="mission-name">{name}</td>
       <td className="mission-description">{description}</td>
       <td><button className='mission-status-btn'>Not a Member</button></td>
