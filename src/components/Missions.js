@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getMissions } from '../redux/missions/missions';
+import MissionItem from './MissionItem';
 
 function Missions() {
+  const missions = useSelector((state) => state.missionsReducer.missions);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMissions());
+  }, [dispatch]);
+
   return (
-  <table>
-    <thead>
-      <tr>
-        <th>Mission</th>
-        <th>Description</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-      <tbody>
-      <tr>
-        <td><button className='mission-status-btn'>Not a Member</button></td>
-        <td><button className='join-mission-btn'>Join Mission</button></td>
-      </tr>
-      </tbody>
-  </table>
-  )
-}
+      <table className="missions-table">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <MissionItem
+              id={mission.id}
+              key={mission.id}
+              name={mission.name}
+              description={mission.description}
+            />
+          ))}
+        </tbody>
+      </table>
+  );
+};
 
 export default Missions;
