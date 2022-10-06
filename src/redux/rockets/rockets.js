@@ -46,22 +46,33 @@ const renderRockets = (data) => {
   return rocketsArr;
 };
 
-// const reserveRocket = (state, payload) => ({
-//  state = state.map((rocket) => {
-//     if (rocket.id !== id) return rocket;
-//     return { ...rocket, reserved: !rocket.reserved };
-//   }),
-
-// });
-
-const reserveRocket = (payload) => ({
+const reserveRocket = (id) => ({
   type: RESERVE_ROCKET,
-  payload,
+  id,
 });
 
-const cancelReservation = (payload) => ({
+const cancelReservation = (id) => ({
   type: CANCEL_RESERVATION,
-  payload,
+  id,
 });
 
+export const reserveRocketFun = (state, id) => {
+  const newState = state.map((rocket) => {
+    if (rocket.id !== id) {
+      return rocket;
+    }
+    return { ...rocket, reserved: true };
+  });
+  return newState;
+};
+
+export const cancelReservationFun = (state, id) => {
+  const newState = state.map((rocket) => {
+    if (rocket.id !== id) {
+      return rocket;
+    }
+    return { ...rocket, reserved: false };
+  });
+  return newState;
+};
 export { rocketsReducer, getRockets, reserveRocket, cancelReservation };

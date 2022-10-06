@@ -11,7 +11,6 @@ function Rockets() {
 
   return (
     <>
-      {console.log(rockets)}
       {rockets.map((rocket) => (
         <div key={rocket.id}>
           <img src={rocket.flickr_images} alt="img" />
