@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 function MyProfile() {
-  const rockets = useSelector((state) => StaticRange.rocket);
-  const filterRockets = rockets.filter((rocket) => rocket.reserved == true);
+  const rockets = useSelector((state) => state.rocketsReducer);
+  const filterRockets = rockets.rockets.filter((rocket) => rocket.reserved == true);
   return (
     <div>
       <h2>My Rockets</h2>

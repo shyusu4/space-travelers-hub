@@ -1,12 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getRockets, reserveRocket } from '../redux/rockets/rockets';
+import { getRockets, reserveRocket, rocketsReducer } from '../redux/rockets/rockets';
 function Rockets() {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRockets());
+    if (!rockets.length) {
+      dispatch(getRockets());
+    }
   }, [dispatch]);
 
   return (
