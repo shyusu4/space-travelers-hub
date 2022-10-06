@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { getRockets, reserveRocket, rocketsReducer } from '../redux/rockets/rockets';
+
 function Rockets() {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
   const dispatch = useDispatch();
@@ -32,4 +32,5 @@ function Rockets() {
     </>
   );
 }
+
 export default Rockets;

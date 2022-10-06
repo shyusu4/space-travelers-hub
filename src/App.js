@@ -1,9 +1,10 @@
-import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.css';
 import MyProfile from './components/Myprofile';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
+
 function App() {
   return (
     <>

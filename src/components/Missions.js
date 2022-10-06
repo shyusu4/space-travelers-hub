@@ -12,27 +12,28 @@ function Missions() {
   }, [dispatch]);
 
   return (
-      <table className="missions-table">
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {missions.map((mission) => (
-            <MissionItem
-              id={mission.id}
-              key={mission.id}
-              name={mission.name}
-              description={mission.description}
-            />
-          ))}
-        </tbody>
-      </table>
+    <table className="missions-table">
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>{}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {missions.map((mission) => (
+          <MissionItem
+            id={mission.id}
+            key={mission.id}
+            name={mission.name}
+            reserved={mission.reserved}
+            description={mission.description}
+          />
+        ))}
+      </tbody>
+    </table>
   );
-};
+}
 
 export default Missions;
