@@ -6,28 +6,6 @@ const CANCEL_RESERVATION = 'space-travelers-hub/rockets/CANCEL_RESERVATION';
 const URL = 'https://api.spacexdata.com/v3/rockets';
 const initialState = { rockets: [] };
 
-const rocketsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case GET_ROCKETS:
-      return { ...state, loading: true };
-
-    case GET_ROCKETS_SUCCESS:
-      renderRockets(action.data);
-      return { ...state, loading: false, rockets: renderRockets(action.data) };
-    case RESERVE_ROCKET:
-      return {
-        ...state,
-        rockets: state.rockets.map((rocket) => ({
-          ...rocket,
-          reserved: !rocket.reserved,
-        })),
-      };
-
-    default:
-      return state;
-  }
-};
-
 const getRockets = () => async (dispatch) => {
   dispatch({ type: GET_ROCKETS });
   const response = await fetch(URL);
@@ -64,4 +42,28 @@ const cancelReservation = (payload) => ({
   payload,
 });
 
-export { rocketsReducer, getRockets, reserveRocket, cancelReservation };
+const rocketsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_ROCKETS:
+      return { ...state, loading: true };
+
+    case GET_ROCKETS_SUCCESS:
+      renderRockets(action.data);
+      return { ...state, loading: false, rockets: renderRockets(action.data) };
+    case RESERVE_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => ({
+          ...rocket,
+          reserved: !rocket.reserved,
+        })),
+      };
+
+    default:
+      return state;
+  }
+};
+
+export {
+  rocketsReducer, getRockets, reserveRocket, cancelReservation,
+};
