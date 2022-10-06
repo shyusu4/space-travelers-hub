@@ -1,12 +1,18 @@
 import { Link } from 'react-router-dom';
+import logo from './img/planet.png';
 
 function Navbar() {
   return (
     <nav>
       <div className="logo-container">
-        <img src={require('./img/planet.png')} alt="logo"></img>
+        <img src={logo} alt="logo" />
       </div>
-      <h1>Space Travelers' Hub</h1>
+      <h1>
+        Space Travelers
+        <span>&apos;</span>
+        {' '}
+        Hub
+      </h1>
       <ul className="links-container">
         <li>
           <Link to="/">Rockets</Link>

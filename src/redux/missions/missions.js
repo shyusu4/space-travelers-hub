@@ -6,26 +6,6 @@ const LEAVE_MISSIONS = 'space-travelers-hub/missions/LEAVE_MISSIONS';
 const missionsURL = 'https://api.spacexdata.com/v3/missions';
 const initialState = { missions: [] };
 
-const missionsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case GET_MISSIONS:
-      return { ...state, loading: true };
-      
-    case GET_MISSIONS_SUCCESS:
-      renderMissions(action.data);
-      return { ...state, loading: false, missions: renderMissions(action.data) };
-
-    case JOIN_MISSIONS:
-      return { ...state, missions: joinMissionsFunc(state.missions, action.id) };
-    
-    case LEAVE_MISSIONS:
-      return { ...state, missions: leaveMissionsFunc(state.missions, action.id) };
-
-    default:
-      return state;
-  }
-};
-
 const getMissions = () => async (dispatch) => {
   dispatch({ type: GET_MISSIONS });
   const response = await fetch(missionsURL);
@@ -76,4 +56,26 @@ export const leaveMissionsFunc = (state, id) => {
   return newState;
 };
 
-export { missionsReducer, getMissions, joinMissions, leaveMissions  };
+const missionsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_MISSIONS:
+      return { ...state, loading: true };
+
+    case GET_MISSIONS_SUCCESS:
+      renderMissions(action.data);
+      return { ...state, loading: false, missions: renderMissions(action.data) };
+
+    case JOIN_MISSIONS:
+      return { ...state, missions: joinMissionsFunc(state.missions, action.id) };
+
+    case LEAVE_MISSIONS:
+      return { ...state, missions: leaveMissionsFunc(state.missions, action.id) };
+
+    default:
+      return state;
+  }
+};
+
+export {
+  missionsReducer, getMissions, joinMissions, leaveMissions,
+};
