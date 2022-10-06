@@ -7,6 +7,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .rocket-div {
   margin-left: 20px;
 }
@@ -62,5 +63,5 @@
   background-color: #1fa5e6;
   color: #fff;
   border: #1fa5e6;
-  border: non;
+  border: none;
 }
