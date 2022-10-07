@@ -9,33 +9,29 @@ function MyProfile() {
 
   return (
     <div className="my-profile">
-      <div className="my-profile-titles">
-        <h2>My Missions</h2>
-        <h2>My Rockets</h2>
+      <div className="my-missions">
+        <h2 className="missions-title">My Missions</h2>
+        {joinedMissions.length === 0 ? (
+          <p className="missionp">Lets get some missions!</p>
+        ) : (
+          joinedMissions.map((mission) => (
+            <p key={mission.id} className="mission-list">
+              <>{mission.name}</>
+            </p>
+          ))
+        )}
       </div>
-      <div className="my-profile-body">
-        <div className="my-missions">
-          {joinedMissions.length === 0 ? (
-            <p className="missionp">Lets get some missions!</p>
-          ) : (
-            joinedMissions.map((mission) => (
-              <p key={mission.id}>
-                <>{mission.name}</>
-              </p>
-            ))
-          )}
-        </div>
-        <div className="my-rockets">
-          {filterRockets.length === 0 ? (
-            <p className="rocketp">Lets get some rockets!</p>
-          ) : (
-            filterRockets.map((rocket) => (
-              <p key={rocket.id} className="rocket-list">
-                {rocket.rocket_name}
-              </p>
-            ))
-          )}
-        </div>
+      <div className="my-rockets">
+        <h2 className="rocket-title">My Rockets</h2>
+        {filterRockets.length === 0 ? (
+          <p className="rocketp">Lets get some rockets!</p>
+        ) : (
+          filterRockets.map((rocket) => (
+            <p key={rocket.id} className="rocket-list">
+              {rocket.rocket_name}
+            </p>
+          ))
+        )}
       </div>
     </div>
   );
