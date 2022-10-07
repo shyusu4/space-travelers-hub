@@ -14,15 +14,12 @@ const getMissions = () => async (dispatch) => {
 };
 
 const renderMissions = (data) => {
-  const missionsArr = [];
-  for (let i = 0; i < data.length; i += 1) {
-    missionsArr.push({
-      id: data[i].mission_id,
-      name: data[i].mission_name,
-      description: data[i].description,
-      reserved: false,
-    });
-  }
+  const missionsArr = data.map((mission) => ({
+    id: mission.mission_id,
+    name: mission.mission_name,
+    description: mission.description,
+    reserved: false,
+  }));
   return missionsArr;
 };
 
@@ -36,26 +33,6 @@ const leaveMissions = (id) => ({
   id,
 });
 
-export const joinMissionsFunc = (state, id) => {
-  const newState = state.map((mission) => {
-    if (mission.id !== id) {
-      return mission;
-    }
-    return { ...mission, reserved: true };
-  });
-  return newState;
-};
-
-export const leaveMissionsFunc = (state, id) => {
-  const newState = state.map((mission) => {
-    if (mission.id !== id) {
-      return mission;
-    }
-    return { ...mission, reserved: false };
-  });
-  return newState;
-};
-
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSIONS:
@@ -66,10 +43,26 @@ const missionsReducer = (state = initialState, action) => {
       return { ...state, loading: false, missions: renderMissions(action.data) };
 
     case JOIN_MISSIONS:
-      return { ...state, missions: joinMissionsFunc(state.missions, action.id) };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.id !== action.id) {
+            return mission;
+          }
+          return { ...mission, reserved: true };
+        }),
+      };
 
     case LEAVE_MISSIONS:
-      return { ...state, missions: leaveMissionsFunc(state.missions, action.id) };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.id !== action.id) {
+            return mission;
+          }
+          return { ...mission, reserved: false };
+        }),
+      };
 
     default:
       return state;

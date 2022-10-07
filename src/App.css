@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
-
 * {
   margin: 0;
 }
@@ -59,33 +56,30 @@ hr {
   background-color: #0a0201;
 }
 
-.rocketsCon {
-  margin-left: 800px;
+.my-profile {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.rocket-title {
-  font-size: 50px;
-  font-family: 'Tajawal', sans-serif;
-  color: #0d0e0e;
-  text-align: start;
+.my-profile-titles {
+  font-size: 40px;
+  text-align: center;
+}
+
+.my-profile-titles > th {
+  padding-right: 35px;
   border: none;
 }
 
-.rocket-list {
-  border: 1px solid #0a0201;
-  font-family: 'Playfair Display', serif;
-  color: #0d0e0e;
-  font-size: 25px;
-  font-weight: 600;
-  padding-left: 20px;
-  padding-top: 20px;
-  height: 70px;
-  width: 500px;
+.my-rockets,
+.my-missions {
+  border: none;
+  font-size: 22px;
+  color: cornflowerblue;
 }
 
-.rocketp {
-  font-family: 'Playfair Display', serif;
-  color: #940508;
-  font-size: 25px;
-  font-weight: 600;
+.rocketp,
+.missionp {
+  color: #9b1220;
 }

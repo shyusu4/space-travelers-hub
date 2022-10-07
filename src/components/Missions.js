@@ -8,13 +8,15 @@ function Missions() {
   const missions = useSelector((state) => state.missionsReducer.missions);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMissions());
+    if (!missions.length) {
+      dispatch(getMissions());
+    }
   }, [dispatch]);
 
   return (
     <table className="missions-table">
       <thead>
-        <tr>
+        <tr className="mission-header">
           <th>Mission</th>
           <th>Description</th>
           <th>Status</th>

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMissions, leaveMissions } from '../redux/missions/missions';
+import './Missions.css';
 
 const MissionItem = (props) => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const MissionItem = (props) => {
       <td className="mission-description">{description}</td>
       <td className="mission-badge">
         {reserved ? (<span className="active-member">Active Member</span>)
-          : (<span>Not A Member</span>)}
+          : (<span className="non-member">Not A Member</span>)}
       </td>
       <td className="mission-btn">
         {reserved ? (
