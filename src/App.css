@@ -75,28 +75,11 @@ hr {
 .my-rockets,
 .my-missions {
   border: none;
+  font-size: 22px;
+  color: cornflowerblue;
 }
 
-/* .rocket-title {
-  font-size: 50px;
-  color: #0d0e0e;
-  text-align: start;
-  border: none;
+.rocketp,
+.missionp {
+  color: #9b1220;
 }
-
-.rocket-list {
-  border: 1px solid #0a0201;
-  color: #0d0e0e;
-  font-size: 25px;
-  font-weight: 600;
-  padding-left: 20px;
-  padding-top: 20px;
-  height: 70px;
-  width: 500px;
-}
-
-.rocketp {
-  color: #940508;
-  font-size: 25px;
-  font-weight: 600;
-} */

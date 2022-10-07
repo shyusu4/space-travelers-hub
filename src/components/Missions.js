@@ -16,7 +16,7 @@ function Missions() {
   return (
     <table className="missions-table">
       <thead>
-        <tr>
+        <tr className="mission-header">
           <th>Mission</th>
           <th>Description</th>
           <th>Status</th>

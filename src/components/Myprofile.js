@@ -19,7 +19,7 @@ function MyProfile() {
         <td className="my-missions">
           <tr>
             {joinedMissions.length === 0 ? (
-              <p>Lets get some missions!</p>
+              <p className="missionp">Lets get some missions!</p>
             ) : (
               joinedMissions.map((mission) => (
                 <p key={mission.id}>
