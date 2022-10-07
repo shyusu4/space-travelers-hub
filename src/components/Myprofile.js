@@ -8,42 +8,36 @@ function MyProfile() {
   const filterRockets = rockets.rockets.filter((rocket) => rocket.reserved === true);
 
   return (
-    <table className="my-profile">
-      <thead>
-        <tr className="my-profile-titles">
-          <th>My Missions</th>
-          <th>My Rockets</th>
-        </tr>
-      </thead>
-      <tbody>
-        <td className="my-missions">
-          <tr>
-            {joinedMissions.length === 0 ? (
-              <p className="missionp">Lets get some missions!</p>
-            ) : (
-              joinedMissions.map((mission) => (
-                <p key={mission.id}>
-                  <p>{mission.name}</p>
-                </p>
-              ))
-            )}
-          </tr>
-        </td>
-        <td className="my-rockets">
-          <tr>
-            {filterRockets.length === 0 ? (
-              <p className="rocketp">Lets get some rockets!</p>
-            ) : (
-              filterRockets.map((rocket) => (
-                <p key={rocket.id} className="rocket-list">
-                  {rocket.rocket_name}
-                </p>
-              ))
-            )}
-          </tr>
-        </td>
-      </tbody>
-    </table>
+    <div className="my-profile">
+      <div className="my-profile-titles">
+        <h2>My Missions</h2>
+        <h2>My Rockets</h2>
+      </div>
+      <div className="my-profile-body">
+        <div className="my-missions">
+          {joinedMissions.length === 0 ? (
+            <p className="missionp">Lets get some missions!</p>
+          ) : (
+            joinedMissions.map((mission) => (
+              <p key={mission.id}>
+                <>{mission.name}</>
+              </p>
+            ))
+          )}
+        </div>
+        <div className="my-rockets">
+          {filterRockets.length === 0 ? (
+            <p className="rocketp">Lets get some rockets!</p>
+          ) : (
+            filterRockets.map((rocket) => (
+              <p key={rocket.id} className="rocket-list">
+                {rocket.rocket_name}
+              </p>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 

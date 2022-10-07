@@ -56,10 +56,15 @@ hr {
   background-color: #0a0201;
 }
 
+/*
 .my-profile {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-profile-body {
+  display: flex;
 }
 
 .my-profile-titles {
@@ -82,4 +87,4 @@ hr {
 .rocketp,
 .missionp {
   color: #9b1220;
-}
+} */
