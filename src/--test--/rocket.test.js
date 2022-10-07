@@ -6,8 +6,8 @@ import Rockets from '../components/Rockets';
 import Navbar from '../components/Navbar';
 import store from '../redux/configureStore';
 
-describe('Test NaveBar', () => {
-  it('Test NaveBar renders ', () => {
+describe('Test NavBar', () => {
+  it('Test NavBar renders ', () => {
     const component = TestRender.create(
       <Router>
         <Navbar />

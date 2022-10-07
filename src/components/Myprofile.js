@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import '../App.css';
+
 function MyProfile() {
   const missions = useSelector((state) => state.missionsReducer.missions);
   const joinedMissions = missions.filter((mission) => mission.reserved === true);
