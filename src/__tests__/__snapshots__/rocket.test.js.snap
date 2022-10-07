@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NaveBar Test NaveBar renders  1`] = `
+<nav>
+  <div
+    className="logo-container"
+  >
+    <img
+      alt="logo"
+      src="planet.png"
+    />
+  </div>
+  <h1>
+    Space Travelers
+    <span>
+      '
+    </span>
+     
+    Hub
+  </h1>
+  <ul
+    className="links-container"
+  >
+    <li>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+    </li>
+    <li>
+      <a
+        href="/Missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+    </li>
+    <hr />
+    <li>
+      <a
+        href="/MyProfile"
+        onClick={[Function]}
+      >
+        My Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Test Rocket  Test Rocket component  1`] = `null`;

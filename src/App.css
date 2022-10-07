@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-top: 1rem;
+  padding: 0 35px;
+  border-bottom: 2px solid gray;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: blue;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #9b1220;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+img {
+  height: 6rem;
+}
+
+h1 {
+  margin-left: -50%;
+}
+
+hr {
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  color: #0a0201;
+  background-color: #0a0201;
+}
+
+.my-profile {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.missions-title,
+.rocket-title {
+  font-size: 50px;
+  font-family: 'Tajawal', sans-serif;
+  color: #0d0e0e;
+  text-align: start;
+  border: none;
+}
+
+.mission-list,
+.rocket-list {
+  border: 1px solid #0a0201;
+  font-family: 'Playfair Display', serif;
+  color: #0d0e0e;
+  font-size: 25px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-top: 20px;
+  height: 70px;
+  width: 500px;
+}
+
+.missionp,
+.rocketp {
+  font-family: 'Playfair Display', serif;
+  color: #940508;
+  font-size: 25px;
+  font-weight: 600;
+}

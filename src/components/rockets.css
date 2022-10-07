@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+.rocket-container {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rocket-div {
+  margin-left: 20px;
+}
+
+.rocket-img {
+  margin-left: 40px;
+  width: 230px;
+  height: 180px;
+}
+
+.rocket-name {
+  font-family: 'Alkalami', serif;
+  color: #0d0e0e;
+  font-size: 30px;
+}
+
+.rocket-discription {
+  font-family: 'Tajawal', sans-serif;
+  color: #1c1d1d;
+  font-size: 19px;
+}
+
+.reseveRocket,
+.cancelReservation {
+  font-family: 'Playfair Display', serif;
+  width: 150px;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reseveRocket {
+  background-color: #1fa5e6;
+  color: #fff;
+  border: #1fa5e6;
+}
+
+.reseveRocket:hover {
+  background-color: #fff;
+  color: #1c1d1d;
+  border: 1px solid #1c1d1d;
+}
+
+.cancelReservation {
+  background-color: #fff;
+  color: #1c1d1d;
+}
+
+.cancelReservation:hover {
+  background-color: #1fa5e6;
+  color: #fff;
+  border: #1fa5e6;
+  border: none;
+}
