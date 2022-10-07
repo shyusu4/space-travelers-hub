@@ -6,6 +6,7 @@ function MyProfile() {
   const joinedMissions = missions.filter((mission) => mission.reserved === true);
   const rockets = useSelector((state) => state.rocketsReducer);
   const filterRockets = rockets.rockets.filter((rocket) => rocket.reserved === true);
+
   return (
     <div className="my-profile">
       <table>
